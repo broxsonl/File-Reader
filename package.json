@@ -1,0 +1,23 @@
+{
+  "name": "File-Reader",
+  "version": "1.0.0",
+  "description": "Application to read text files and perform various actions",
+  "main": "num-words.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/broxsonl/File-Reader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/broxsonl/File-Reader/issues"
+  },
+  "homepage": "https://github.com/broxsonl/File-Reader#readme",
+  "dependencies": {
+    "bluebird": "^3.4.7"
+  }
+}
