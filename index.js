@@ -8,6 +8,7 @@ const wordCount = require('./lib/word-count');
 const firstWordAlpha = require('./lib/first-word-alpha');
 const longestWord = require('./lib/longest-word');
 const shortestWord = require('./lib/shortest-word');
+const countOfN = require('./lib/count-of-n');
 
 const randomWord = require('./lib/random-word');
 
@@ -15,6 +16,7 @@ const randomWord = require('./lib/random-word');
 // getWords(firstWordAlpha);
 // getWords(longestWord);
 // getWords(shortestWord);
+getWords(countOfN, 23);
 
 // getWords(randomWord);
 

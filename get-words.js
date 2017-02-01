@@ -5,7 +5,7 @@ const readFile = Promise.promisify(require('fs').readFile);
 
 let allWords = '';
 
-module.exports = function(callback) {
+module.exports = function(callback, n) {
 
   readFile(`${__dirname}/words/words1.txt`, 'utf8')
     .then(data => {
@@ -27,7 +27,7 @@ module.exports = function(callback) {
                   allWords += data;
                 })
                 .then( () => {
-                  callback(allWords);
+                  callback(allWords, n);
                 });
             });
         });
