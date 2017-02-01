@@ -1,7 +1,6 @@
 'use strict';
 
 const Promise = require('bluebird');
-
 const readFile = Promise.promisify(require('fs').readFile);
 
 let allWords = '';
