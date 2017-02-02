@@ -10,26 +10,18 @@ module.exports = function(callback, n) {
   readFile(`${__dirname}/words/words1.txt`, 'utf8')
     .then(data => {
       allWords += data;
+      return readFile(`${__dirname}/words/words2.txt`, 'utf8');
     })
-    .then(() => {
-      readFile(`${__dirname}/words/words2.txt`, 'utf8')
-        .then(data => {
-          allWords += data;
-        })
-        .then(() => {
-          readFile(`${__dirname}/words/words3.txt`, 'utf8')
-            .then(data => {
-              allWords += data;
-            })
-            .then(() => {
-              readFile(`${__dirname}/words/words4.txt`, 'utf8')
-                .then(data => {
-                  allWords += data;
-                })
-                .then( () => {
-                  callback(allWords, n);
-                });
-            });
-        });
+    .then(data => {
+      allWords += data;
+      return readFile(`${__dirname}/words/words3.txt`, 'utf8');
+    })
+    .then(data => {
+      allWords += data;
+      return readFile(`${__dirname}/words/words4.txt`, 'utf8');
+    })
+    .then(data => {
+      allWords += data;
+      callback(allWords, n);
     });
 };
