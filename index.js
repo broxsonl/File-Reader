@@ -13,21 +13,25 @@ const mostLetterRepeats = require('./lib/most-letter-repeats');
 const mostUniqueLetters = require('./lib/most-unique-letters');
 const randomWord = require('./lib/random-word');
 
-if (process.argv[2] === 'wordCount') getWords(wordCount);
-if (process.argv[2] === 'firstWordAlpha') getWords(firstWordAlpha);
-if (process.argv[2] === 'longestWord') getWords(longestWord);
-if (process.argv[2] === 'shortestWord') getWords(shortestWord);
-if (process.argv[2] === 'countOfN') getWords(countOfN, parseFloat(process.argv[3]));
-if (process.argv[2] === 'mostLetterRepeats') getWords(mostLetterRepeats);
-if (process.argv[2] === 'mostUniqueLetters') getWords(mostUniqueLetters);
-if (process.argv[2] === 'randomWord') getWords(randomWord);
+let commandOne = process.argv[2];
+let commandTwo = process.argv[3];
 
-if (process.argv[2] === 'runAll') {
+if (commandOne === 'wordCount') getWords(wordCount);
+if (commandOne === 'firstWordAlpha') getWords(firstWordAlpha);
+if (commandOne === 'longestWord') getWords(longestWord);
+if (commandOne === 'shortestWord') getWords(shortestWord);
+if (commandOne === 'countOfN') getWords(countOfN, parseFloat(commandTwo));
+if (commandOne === 'mostLetterRepeats') getWords(mostLetterRepeats);
+if (commandOne === 'mostUniqueLetters') getWords(mostUniqueLetters);
+if (commandOne === 'randomWord') getWords(randomWord);
+
+if (commandOne === 'runAll') {
+  if (!commandTwo) throw new Error('Must pass in second argument for n.');
   getWords(wordCount);
   getWords(firstWordAlpha);
   getWords(longestWord);
   getWords(shortestWord);
-  getWords(countOfN, parseFloat(process.argv[3]));
+  getWords(countOfN, parseFloat(commandTwo));
   getWords(mostLetterRepeats);
   getWords(mostUniqueLetters);
   getWords(randomWord);
