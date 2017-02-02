@@ -16,7 +16,8 @@ const randomWord = require('./lib/random-word');
 // let commands = []
 
 // let command = process.argv[2]
-// console.log(command);
+
+getWords(wordCount);
 getWords(firstWordAlpha);
 getWords(longestWord);
 getWords(shortestWord);
@@ -24,4 +25,3 @@ getWords(countOfN, 4);
 getWords(mostLetterRepeats);
 getWords(mostUniqueLetters);
 getWords(randomWord);
-getWords(wordCount);
